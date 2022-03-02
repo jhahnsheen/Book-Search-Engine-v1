@@ -25,6 +25,15 @@ const typeDefs = gql`
     user: User
   }
 
+  input bookInput {
+    authors: [String]!
+    description: String!
+    title: String!
+    bookId: String!
+    image: String!
+    link: String!
+  }
+
   type Query {
     me(
       _id: String,
@@ -43,7 +52,7 @@ const typeDefs = gql`
       password: String!
     ) : Auth
     saveBook(
-
+      bookInput!
     ) : User
     removeBook(
       bookId: String!
